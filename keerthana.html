@@ -1,0 +1,78 @@
+<html>
+<head>
+ <title> SPORTS DAY REGISTRATION </title>
+</head>
+<center>
+<body>
+<form>
+ Enter Name: <input type="text" id="fname" ><br><br>
+ Enter Employee Id :<input type="text" id="emp"><br><br>
+ Select the events:<br><br>
+ <input type="radio" name="indoor" value="event2" onclick="indoo()">Indoor Events
+ <select id="en1" disabled>
+  <option id="ind" value="Tennis" selected>Tennis</option>
+  <option id="ind1" value="Carrom">Carrom</option>
+  <option id="ind2" value="Chess" >Chess</option>
+  </select>
+ <input type="button" id="b1" value="Register"  onclick="sports()" disabled><br><br>
+ <input type="radio" name="indoor" value="event1" onclick="outdoor()">Outdoor Events
+ <select id="en2" disabled>
+  <option id="out" value="Cricket" selected>Cricket</option>
+  <option id="out1" value="Badminton">Badminton</option>
+  <option id="out2" value="Volley ball" >Volley ball</option>
+ </select>
+ <input type="button" id="b2" value="Register"onclick="sports1()"  disabled ><br><br>
+</form>
+<script>
+var count
+function indoo()
+{
+  document.getElementById("en1").disabled=false;
+  document.getElementById("b1").disabled=false;
+  document.getElementById("en2").disabled=true;
+  document.getElementById("b2").disabled=true;
+} 
+function outdoor()
+{
+  document.getElementById("en2").disabled=false;
+  document.getElementById("b2").disabled=false;
+  document.getElementById("en1").disabled=true;
+  document.getElementById("b1").disabled=true;
+}
+
+function sports() 
+{ 
+  var strUser=[];
+  for(var i=0; i<3; i++)
+  {
+  var e = document.getElementById("en1");
+  var strUser1 = e.options[e.selectedIndex].text;
+  strUser[i]=strUser1[i].value;
+  }
+  if(strUser.length==3)
+  {
+    alert("You have registered for three events successfully");
+  }
+} 
+function sports1() 
+{ 
+  var strUser=[];
+  
+  for(var i=0; i<3; i++)
+  {  
+    var e = document.getElementById("en2");
+    var strUser1 = e.options[e.selectedIndex].text;
+    strUser[i]=strUser1[i].value;
+  }
+  if(strUser.length==3)
+  {
+    alert("You have registered for three events successfully");
+  }
+} 
+
+
+
+</script>
+</body>
+</center>
+</html> 
